@@ -45,14 +45,12 @@ module.exports = {
             {
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
                 type: 'asset/resource'
-            },
-            // {
-            //     loader: "postcss-loader",
-            //     options: {
-            //         postcssOptions: { plugins: [require('autoprefixer')()] }
-            //     }
-            // }
+            }
 
         ]
+    },
+    optimization:
+    {
+        splitChunks: { chunks: "all" }
     }
 }
