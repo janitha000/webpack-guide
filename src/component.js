@@ -3,6 +3,13 @@ export default (text = "Hello, Webpack! from Janitha") => {
 
     element.innerHTML = text;
 
+    element.onclick = () => {
+        import('./lazy').then((lazy) => {
+            element.textContent = lazy.default
+        })
+            .catch((err) => console.log(err))
+    }
+
     return element;
 };
 
